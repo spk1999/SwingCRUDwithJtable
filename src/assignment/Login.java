@@ -6,6 +6,7 @@
 package assignment;
 
 import controller.UserController;
+import file.FileManager;
 import javax.swing.JOptionPane;
 import model.User;
 
@@ -111,8 +112,10 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        userController= new UserController();
-        if(userController.loginUser(new User(userName.getText(),password.getText())))
+       // userController= new UserController();
+       // if(userController.loginUser(new User(userName.getText(),password.getText())))
+       file.FileManager fm= new FileManager();
+       if(fm.readUser(new User(userName.getText(),password.getText())))
         {
             JOptionPane.showMessageDialog(null, "Login Sucessfull");
             new Home().setVisible(true);

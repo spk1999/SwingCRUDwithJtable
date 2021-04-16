@@ -5,6 +5,9 @@
  */
 package assignment;
 
+import file.FileManager;
+import model.User;
+
 /**
  *
  * @author cod
@@ -16,7 +19,10 @@ public class Assignment {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Login().setVisible(true);
+       // new Login().setVisible(true);
+      new FileManager().writeUser(new User("mango ","mango"));
+      //new FileManager().readUser(new User("mango","mango"));
+       
     }
     
 }

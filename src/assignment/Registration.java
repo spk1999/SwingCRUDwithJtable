@@ -6,6 +6,7 @@
 package assignment;
 
 import controller.UserController;
+import file.FileManager;
 import javax.swing.JOptionPane;
 import model.User;
 
@@ -127,8 +128,13 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        userController=new UserController();
-        if(userController.addUser(new User(null,name.getText(),userName.getText(),password.getText())))
+       // userController=new UserController();
+       // if(userController.addUser(new User(null,name.getText(),userName.getText(),password.getText())))
+       
+       file.FileManager fm= new FileManager();
+       fm.fileMange();
+       
+       if(fm.writeUser(new User(userName.getText(),password.getText())))
         {
             JOptionPane.showMessageDialog(null, "User Sucessfully Registered");
             super.setVisible(false);
